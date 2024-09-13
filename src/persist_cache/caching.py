@@ -55,7 +55,7 @@ def hash(data: Any) -> str:
     # Serialise the data.
     data = serialize(data)
     
-    # Hash the data and affix its length, preceded by a hyphen (to reduce the likelihood of collisions).
+    # Hash the data and affix its length (to reduce the likelihood of collisions).
     return f'{xxh3_128_hexdigest(data)}{len(data)}'
 
 def shorthash(data: Any) -> str:
@@ -64,7 +64,7 @@ def shorthash(data: Any) -> str:
     # Serialise the data.
     data = serialize(data)
     
-    # Hash the data and affix its length, preceded by a hyphen (to reduce the likelihood of collisions).
+    # Hash the data and affix its length (to reduce the likelihood of collisions).
     return f'{xxh3_64_hexdigest(data)}{len(data)}'
 
 def delete(dir: str) -> None:
